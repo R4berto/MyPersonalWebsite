@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>I appreciate you sending your comments about my website,<span id="result-name"/></h1>
+        <p>Email:<span id="result-email" /></p>
+        <p>Subject:<span id="result-subject"/></p>
+        <p>Message:<span id="result-message"/></p>
+        <p class="back">Go back to the <a href="Index.html">Home</a>.</p>
+    
+      </div>
+        <script>
+        window.addEventListener('load', () => {
+    
+        // Via Query parameters - GET
+        const params = (new URL(document.location)).searchParams;
+        const name = params.get('name');
+        const email = params.get('email');
+        const subject = params.get('subject');
+        const message = params.get('message');
+    
+        // Via local Storage
+        /* const name = localStorage.getItem('NAME');
+        const email = localStorage.getItem('EMAIL');
+        const subject = localStorage.getItem('SUBJECT');
+        const message = localStorage.getItem('MESSAGE'); */
+    
+        // const name = sessionStorage.getItem('NAME');
+        // const email = sessionStorage.getItem('EMAIL');
+        // const subject = sessionStorage.getItem('SUBJECT');
+        // const message = sessionStorage.getItem('MESSAGE');
+    
+        document.getElementById('result-name').innerHTML = name;
+        document.getElementById('result-email').innerHTML = email;
+        document.getElementById('result-subject').innerHTML = subject;
+        document.getElementById('result-message').innerHTML = message;
+    
+        })
+        </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        function handleSubmit () {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+        
+            sessionStorage.setItem("NAME", name);
+            sessionStorage.setItem("EMAIL", email);
+            sessionStorage.setItem("SUBJECT", subject);
+            sessionStorage.setItem("MESSAGE", message);
+    
+            return;
+        }     
+        </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>Send me message about how can I improve my website and feel free to ask me about my website.</p>
+        <form action="Result.html" method="get">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <label for="subject">Subject:</label>
+            <input type="subject" name="subject" id="subject">
+            <label for="message">Message</label>
+            <textarea type="message" cols="30" rows="10" name="message"></textarea> 
+            <input type="submit" onclick="handleSubmit()">
+        </form>
+    </div>
+
+</body>
+</html>
